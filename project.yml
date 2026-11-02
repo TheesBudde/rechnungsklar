@@ -1,0 +1,42 @@
+# Xcode-Projekt für Rechnungsklar. Erzeugen mit XcodeGen:
+#   brew install xcodegen && xcodegen
+# Danach Rechnungsklar.xcodeproj öffnen, unter „Signing & Capabilities“ dein Team wählen und
+# Product → Archive → Distribute App → App Store Connect.
+name: Rechnungsklar
+options:
+  bundleIdPrefix: de.rechnungsklar
+  deploymentTarget:
+    macOS: "14.0"
+  developmentLanguage: de
+settings:
+  base:
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    SWIFT_VERSION: "5.0"
+    DEVELOPMENT_TEAM: ""            # deine Team-ID eintragen
+targets:
+  Rechnungsklar:
+    type: application
+    platform: macOS
+    sources:
+      - path: Sources
+      - path: Resources/PrivacyInfo.xcprivacy
+        buildPhase: resources
+      - path: Resources/Assets.xcassets
+    info:
+      path: Resources/Info.plist
+    entitlements:
+      path: Resources/Rechnungsklar.entitlements
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: de.rechnungsklar.app
+        PRODUCT_NAME: Rechnungsklar
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ENABLE_HARDENED_RUNTIME: YES
+        CODE_SIGN_STYLE: Automatic
+        INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.business
+      configs:
+        Debug:
+          SWIFT_ACTIVE_COMPILATION_CONDITIONS: DEBUG
+    scheme:
+      storeKitConfiguration: Resources/Rechnungsklar.storekit

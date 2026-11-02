@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- Pflicht im Mac App Store -->
+	<key>com.apple.security.app-sandbox</key>
+	<true/>
+	<!-- Öffnen- und Sichern-Dialoge, Drag & Drop von E-Rechnungen -->
+	<key>com.apple.security.files.user-selected.read-write</key>
+	<true/>
+	<!-- Rechnungen drucken -->
+	<key>com.apple.security.print</key>
+	<true/>
+</dict>
+</plist>
